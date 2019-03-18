@@ -3,7 +3,8 @@
 {% block body %}
     <body>
 
-    <div id="header" class="container-fluid">
+
+    <div id="header" class="container col-12">
         <div class="d-flex justify-content-center">
             <img id="logo" class="mt-2" src="{{ asset('logoRecanto.png') }}">
         </div>
@@ -13,13 +14,25 @@
             <p id="subtitle">Restaurante e Hotel</p>
         </div>
     </div>
+    <div id="border"></div>
+    <div class="background"></div>
     </body>
 {% endblock %}
 
 {% block stylesheets %}
     <style>
-        body {
-            background-color: rgb(250, 249, 207);
+        body , html{
+            height: 100%;
+            margin: 0;
+        }
+
+        .background {
+            background-image: url("{{ asset('nature.jpg') }}");
+            height: 100%;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            filter: opacity(30%) contrast(200%);
         }
 
         #logo {
@@ -44,6 +57,9 @@
             font-family: 'Abel', sans-serif;
             color: #a12627;
             font-size: 30px;
+        }
+        #border {
+            border-top: solid 2px #fad875;
         }
     </style>
 {% endblock %}
